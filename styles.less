@@ -1,0 +1,199 @@
+body {
+  background : #f2f2f2;
+}
+
+main {
+  text-align : center;
+  img.homeImage {
+    margin    : 150px auto;
+    max-width : 100%;
+  }
+}
+
+a {
+  color           : #374c08;
+  text-decoration : none;
+
+  &.delete-elf {
+    color : #a01e23 !important;
+  }
+
+  i.large {
+    padding   : 15px;
+    display   : inline-block;
+    font-size : 30px !important;
+    .border-radius(50px);
+
+    &:hover {
+      background : rgba(0, 0, 0, 0.05);
+    }
+    &:focus {
+      background : rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+ul {
+  margin     : 0;
+  padding    : 0;
+  list-style : none;
+}
+
+th {
+  color : #6c8d25;
+}
+
+/* Overlay */
+.overlay {
+  position   : fixed;
+  z-index    : 10;
+  top        : 0;
+  right      : 0;
+  width      : 100%;
+  height     : 100%;
+  background : rgba(0, 0, 0, 0.6);
+  &.offScreenLeft {
+    background : rgba(0, 0, 0, 0);
+  }
+  .transition(all 0.7s ease-in-out);
+}
+
+/* Navigation */
+nav {
+  &.sideNav {
+    position   : fixed;
+    z-index    : 11;
+    right      : 0;
+    top        : 0;
+    width      : 350px;
+    height     : 100%;
+    overflow-y : scroll;
+    overflow-x : hidden;
+    background : #57711e;
+    box-shadow : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    .transition(all 0.6s ease-in-out);
+
+    .sideActions {
+      width      : 100%;
+      text-align : right;
+      padding    : 20px;
+      a {
+        margin  : 5px 16px 5px 5px;
+        padding : 10px;
+        color   : #fff;
+      }
+      h1 {
+        margin      : 0;
+        padding     : 10px;
+        font-size   : 30px;
+        color       : #a01e23;
+        text-shadow : 1px 1px rgba(255, 255, 255, 0.75);
+        float       : left;
+      }
+    }
+  }
+
+  /* Toggle Menu */
+  ul.actions {
+    width      : 100%;
+    text-align : right;
+    li {
+      margin : 0 10px 10px 0;
+      a {
+        color : #a01e23;
+      }
+    }
+  }
+  /* Menu Items */
+  ul.items {
+    float: left;
+    width: 100%;
+    border-top : 1px solid rgba(0, 0, 0, 0.1);
+    li {
+      width         : 100%;
+      float         : left;
+      border-bottom : 1px solid rgba(0, 0, 0, 0.1);
+      position      : relative;
+
+      a {
+        padding : 15px;
+        width   : calc(100% - 9px);
+        float   : left;
+        color   : #fff;
+
+        &:hover, &:focus {
+          background : #6c8d25;
+        }
+      }
+
+      /* Dropdown toggle buttons */
+      a.toggleDrop {
+        width         : auto;
+        position      : absolute;
+        right         : 0;
+        height        : 18px;
+        border-bottom : none;
+        border-left   : 1px solid rgba(0, 0, 0, 0.1);
+        background    : #6c8d25;
+
+        &:hover, &:focus {
+          background : #92ac58;
+        }
+      }
+
+      /* Dropdowns */
+      ul.dropdown {
+        li {
+          border-bottom : 1px solid #819a4c;
+          &:last-child {
+            border-bottom : none;
+          }
+          a {
+            width        : calc(100% - 13px);
+            padding-left : 30px;
+            color        : #e6e6e6;
+            background   : #92ac58;
+
+            &:hover, &:focus {
+              background : #819a4c;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Re-usable */
+.offScreenLeft {
+  position : fixed;
+  left     : -9999px !important;
+}
+
+.offScreenRight {
+  position : fixed;
+  right    : -9999px !important;
+}
+
+.offScreenTop {
+  position : fixed;
+  top      : -9999px !important;
+}
+
+/* Mixins */
+.border-radius (@radius: 5px) {
+  -webkit-border-radius   : @radius;
+  -moz-border-radius      : @radius;
+  border-radius           : @radius;
+
+  -moz-background-clip    : padding;
+  -webkit-background-clip : padding-box;
+  background-clip         : padding-box;
+}
+
+.transition (@transition) {
+  -webkit-transition : @transition;
+  -moz-transition    : @transition;
+  -ms-transition     : @transition;
+  -o-transition      : @transition;
+}

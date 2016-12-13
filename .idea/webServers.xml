@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7bef6e0a-8187-4d40-ba27-2efbb67fad8e" name="GeekPower-proficiencyTest-mamp" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="/Applications/MAMP/htdocs/GeekPower-proficiencyTest" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
